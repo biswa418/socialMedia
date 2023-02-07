@@ -1,0 +1,24 @@
+{
+  "name": "codeial",
+  "version": "1.0.0",
+  "description": "A social media app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biswa418/socialMedia.git"
+  },
+  "author": "Biswajeet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biswa418/socialMedia/issues"
+  },
+  "homepage": "https://github.com/biswa418/socialMedia#readme",
+  "dependencies": {
+    "codemon": "^0.1.31-development",
+    "express": "^4.18.2"
+  }
+}
