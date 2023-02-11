@@ -2,6 +2,22 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
+//mongo
+const db = require('./config/mongoose');
+
+//include static files
+app.use(express.static('./assets'));
+
+//get layouts library
+const expressLayouts = require('express-ejs-layouts');
+
+//use the layouts
+app.use(expressLayouts);
+//inividual add styles
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+
+
 //use express router to routes/
 app.use('/', require('./routes'));
 
