@@ -1,9 +1,16 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
 
 //mongo
 const db = require('./config/mongoose');
+
+//use post req parser
+app.use(express.urlencoded({ extended: true }));
+
+//use cookie parser 
+app.use(cookieParser());
 
 //include static files
 app.use(express.static('./assets'));
