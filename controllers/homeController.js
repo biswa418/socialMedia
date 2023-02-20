@@ -1,8 +1,6 @@
 module.exports.home = function (request, response) {
     console.log(request.cookies);
 
-    response.cookie('home_id', 5);
-
     return response.render('home', {
         title: "Home"
     });
