@@ -8,6 +8,10 @@ module.exports.profile = function (request, response) {
 
 //render the sign up page
 module.exports.signup = function (request, response) {
+    if (request.isAuthenticated()) {
+        return response.redirect('/');
+    }
+
     return response.render('user_sign_up', {
         title: "Codial | Sign up"
     });
@@ -15,6 +19,10 @@ module.exports.signup = function (request, response) {
 
 //render the sign in page
 module.exports.signin = function (request, response) {
+    if (request.isAuthenticated()) {
+        return response.redirect('/');
+    }
+
     return response.render('user_sign_in', {
         title: "Codial | Sign in"
     });

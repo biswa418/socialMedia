@@ -14,6 +14,9 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 
+//mongoStore session cookies
+const MongoStore = require('connect-mongo');
+
 //use post req parser
 app.use(express.urlencoded({ extended: true }));
 
@@ -35,7 +38,7 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
-//session
+//session --> save on mongoStore
 app.use(session({
     name: 'codeial', //name of the cookie
     //change secret in prod
@@ -44,12 +47,23 @@ app.use(session({
     resave: false,
     cookie: {
         maxAge: (1000 * 100 * 60) //expiry of cookie in ms
-    }
+    },
+    store: MongoStore.create({
+        mongoUrl: 'mongodb://127.0.0.1:27017/codial_development',
+        autoRemove: 'disabled'
+    },
+
+        function (err) {
+            console.log(err || 'connect-mongo set up working');
+        }
+    )
 }));
 
 //use passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
 
 //use express router to routes/
 app.use('/', require('./routes'));
