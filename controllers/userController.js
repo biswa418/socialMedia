@@ -43,5 +43,5 @@ module.exports.create = function (request, response) {
 
 //sign in and create a session
 module.exports.createSession = function (request, response) {
-
+    return response.redirect('/');
 }
