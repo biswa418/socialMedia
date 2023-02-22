@@ -55,7 +55,7 @@ module.exports.createSession = function (request, response) {
 }
 
 //sign out
-module.exports.destroySession = function (request, response) {
+module.exports.destroySession = function (request, response, next) {
     request.logout(function (err) {
         if (err) { return next(err); }
         response.redirect('/');
