@@ -7,15 +7,53 @@ const expressLayouts = require('express-ejs-layouts');
 
 //mongo
 const db = require('./config/mongoose');
-
-//session cookie
-const session = require('express-session');
-//auth
-const passport = require('passport');
+const session = require('express-session'); //session cookie
+const passport = require('passport');       //auth
 const passportLocal = require('./config/passport-local-strategy');
 
 //mongoStore session cookies
 const MongoStore = require('connect-mongo');
+const sass = require('sass');
+const fs = require('fs');
+const path = require('path');
+
+const srcDir = './assets/scss';
+const destDir = './assets/css';
+
+fs.readdir(srcDir, (err, files) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+
+    files.forEach(file => {
+        if (!file.endsWith('.scss')) {
+            return;
+        }
+
+        const filePath = path.join(srcDir, file);
+        const outputFile = file.replace(/\.scss$/, '.css');
+        const outputFilePath = path.join(destDir, outputFile);
+
+        sass.render({
+            file: filePath,
+            outputStyle: 'compressed'
+        }, (err, result) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+
+            fs.writeFile(outputFilePath, result.css.toString(), err => {
+                if (err) {
+                    console.error(err);
+                } else {
+                    console.log(`${filePath} compiled to ${outputFilePath}`);
+                }
+            });
+        });
+    });
+});
 
 //use post req parser
 app.use(express.urlencoded({ extended: true }));

@@ -1,27 +1,34 @@
 <header>
-    Hey there from header!!
+    <div id="logo">
+        <a href="/">
+            <i class="fa-solid fa-ice-cream"></i>
+            <h1>Codeial</h1>
+        </a>
+    </div>
 
-    <ul>
-        <% if (locals.user){%>
-            <li>
-                <a href="/users/Profile">
-                    <%= user.name %>
-                </a>
-            </li>
-
-            <li>
-                <a href="/users/sign-out">Sign out</a>
-            </li>
-
-            <%} else{%>
+    <div id="users-action">
+        <ul>
+            <% if (locals.user){%>
                 <li>
-                    <a href="/users/sign-in">Sign in</a>
+                    <a href="/users/Profile">
+                        <%= user.name %>
+                    </a>
                 </li>
 
                 <li>
-                    <a href="/users/sign-up">Sign up</a>
+                    <a href="/users/sign-out">Sign out</a>
                 </li>
 
-                <%}%>
-    </ul>
+                <%} else{%>
+                    <li>
+                        <a href="/users/sign-in">Sign in</a>
+                    </li>
+
+                    <li>
+                        <a href="/users/sign-up">Sign up</a>
+                    </li>
+
+                    <%}%>
+        </ul>
+    </div>
 </header>
