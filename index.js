@@ -48,11 +48,11 @@ fs.readdir(srcDir, (err, files) => {
                 if (err) {
                     console.error(err);
                 } else {
-                    console.log(`${filePath} compiled to ${outputFilePath}`);
                 }
             });
         });
     });
+    console.log(`SCSS compiled to CSS`);
 });
 
 //use post req parser

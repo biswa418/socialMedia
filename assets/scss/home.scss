@@ -1,0 +1,12 @@
+body {
+
+    textarea {
+        background-color: #1b2730;
+        color: white;
+        border: none;
+    }
+
+    textarea:focus-visible {
+        border: none;
+    }
+}

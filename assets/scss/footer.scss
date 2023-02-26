@@ -1,0 +1,21 @@
+footer {
+    background-color: #1b2730;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+
+    p {
+        color: white;
+        margin-right: 5%;
+    }
+
+    .links {
+        a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+
+    }
+}
