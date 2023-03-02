@@ -25,3 +25,21 @@ module.exports.create = function (request, response) {
         }
     })
 }
+
+module.exports.destroy = function (request, response) {
+    //find if comments exists
+    Comment.findById(request.params.id, function (err, comment) {
+        if (comment.user == request.user.id) {
+
+            let postId = comment.post;
+
+            comment.remove();
+
+            Post.findByIdAndUpdate(postId, { $pull: { comments: request.params.id } }, function (err, post) {
+                return response.redirect('back');
+            })
+        } else {
+            return response.redirect('back');
+        }
+    })
+}
