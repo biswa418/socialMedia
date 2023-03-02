@@ -5,7 +5,11 @@
 
     <div class="links">
         <a href="/">Home</a>
-        <a href="/users/Profile/<%= u.id %>">Profile</a>
+
+        <%if(locals.user) { %>
+            <a href="/users/Profile/<%= u.id %>">Profile</a>
+            <%}%>
+
     </div>
 
 </footer>
