@@ -4,9 +4,20 @@
     Codial / Profile
 </h1>
 
-<p>
-    <%= profile_user.name %>
-</p>
-<p>
-    <%= profile_user.email %>
-</p>
+<% if(user.id==profile_user.id){ %>
+
+    <form id="updateProfile" action="/users/profile/<%= profile_user.id %>" method="post">
+        <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
+        <input type="text" name="email" placeholder="Your Name" value="<%= profile_user.email %>" required>
+        <button type="submit" class="button">Update</button>
+    </form>
+
+    <% }else{ %>
+        <p>
+            <%= profile_user.name %>
+        </p>
+        <p>
+            <%= profile_user.email %>
+        </p>
+
+        <% } %>

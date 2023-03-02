@@ -9,6 +9,13 @@ module.exports.profile = function (request, response) {
     });
 }
 
+//update profile
+module.exports.update = function (request, response) {
+    User.findByIdAndUpdate(request.params.id, request.body, function (err, user) {
+        return response.redirect('back');
+    });
+}
+
 //render the sign up page
 module.exports.signup = function (request, response) {
     if (request.isAuthenticated()) {
