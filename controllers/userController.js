@@ -11,9 +11,14 @@ module.exports.profile = function (request, response) {
 
 //update profile
 module.exports.update = function (request, response) {
-    User.findByIdAndUpdate(request.params.id, request.body, function (err, user) {
-        return response.redirect('back');
-    });
+    if (request.user.id == request.params.id) {
+        User.findByIdAndUpdate(request.params.id, request.body, function (err, user) {
+            return response.redirect('back');
+        });
+    } else {
+        return response.status(401).send('Unauthorized');
+    }
+
 }
 
 //render the sign up page
