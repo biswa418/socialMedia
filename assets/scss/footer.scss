@@ -3,6 +3,9 @@ footer {
     display: flex;
     padding: 15px;
     align-items: center;
+    margin-bottom: -40px;
+    width: 98vw;
+    z-index: 1;
 
     p {
         color: white;
