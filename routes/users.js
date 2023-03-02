@@ -5,7 +5,7 @@ const passport = require('passport');
 const userController = require('../controllers/userController');
 
 //if only authenticated then send to profile page so middleware checkAuthentication helps
-router.get('/profile', passport.checkAuthentication, userController.profile);
+router.get('/profile/:id', passport.checkAuthentication, userController.profile);
 
 router.get('/sign-up', userController.signup);
 router.get('/sign-in', userController.signin);

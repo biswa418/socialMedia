@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/users');
 
 module.exports.home = function (request, response) {
 
@@ -19,9 +20,12 @@ module.exports.home = function (request, response) {
         .exec(function (err, posts) {
             if (err) { console.log('Could not pop posts'); return; }
 
-            return response.render('home', {
-                title: "Codeial | Home",
-                posts: posts
+            User.find({}, function (err, users) {
+                return response.render('home', {
+                    title: "Codeial | Home",
+                    posts: posts,
+                    all_users: users
+                });
             });
-        })
+        });
 }
