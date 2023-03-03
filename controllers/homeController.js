@@ -1,31 +1,28 @@
 const Post = require('../models/post');
 const User = require('../models/users');
 
-module.exports.home = function (request, response) {
+module.exports.home = async function (request, response) {
 
-    // return response.render('home', {
-    //     title: "Home"
-    // });
-    // return response.end('<h1>Home is here</h1>');
-
-    //populating the users on each post
-    Post.find({})
-        .populate('user')
-        .populate({    // have to populate comment as well as who commented
-            path: 'comments',
-            populate: {
-                path: 'user'
-            }
-        })
-        .exec(function (err, posts) {
-            if (err) { console.log('Could not pop posts'); return; }
-
-            User.find({}, function (err, users) {
-                return response.render('home', {
-                    title: "Codeial | Home",
-                    posts: posts,
-                    all_users: users
-                });
+    try {
+        //populating the users on each post
+        let posts = await Post.find({})
+            .populate('user')
+            .populate({    // have to populate comment as well as who commented
+                path: 'comments',
+                populate: {
+                    path: 'user'
+                }
             });
+
+        let users = await User.find({});
+
+        return response.render('home', {
+            title: "Codeial | Home",
+            posts: posts,
+            all_users: users
         });
+
+    } catch (err) {
+        console.log("error", err);
+    }
 }

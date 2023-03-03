@@ -14,23 +14,22 @@ module.exports.create = function (request, response) {
 }
 
 //delete the post
-module.exports.destroy = function (request, response) {
-
-    //find if post exists
-    Post.findById(request.params.id, function (err, post) {
+module.exports.destroy = async function (request, response) {
+    try {
+        //find if post exists
+        let post = await Post.findById(request.params.id);
 
         //if user id matches
         if (post.user == request.user.id) {
             post.remove();
 
-            Comment.deleteMany({
-                post: request.params.id
-            },
-                function (err,) {
-                    return response.redirect('back');
-                })
+            await Comment.deleteMany({ post: request.params.id });
+
+            return response.redirect('back');
         } else {
             return response.redirect('back');
         }
-    });
+    } catch (err) {
+        console.log("error on deleting comments", err);
+    }
 }
