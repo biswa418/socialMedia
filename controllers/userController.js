@@ -13,9 +13,11 @@ module.exports.profile = function (request, response) {
 module.exports.update = function (request, response) {
     if (request.user.id == request.params.id) {
         User.findByIdAndUpdate(request.params.id, request.body, function (err, user) {
+            request.flash('success', 'User profile updated');
             return response.redirect('back');
         });
     } else {
+        request.flash('warning', 'User unauthorized!');
         return response.status(401).send('Unauthorized');
     }
 
@@ -46,6 +48,7 @@ module.exports.signin = function (request, response) {
 //get the sign up data
 module.exports.create = function (request, response) {
     if (request.body.password != request.body.confirm_pasword) {
+        request.flash('error', "Password doesn't match. Try Again!");
         return response.redirect('back');
     }
 
@@ -56,9 +59,11 @@ module.exports.create = function (request, response) {
             User.create(request.body, function (err, user) {
                 if (err) { console.log('Could not create user in DB.', err); return; }
 
+                request.flash('success', 'User Created! Sign in to proceed!');
                 return response.redirect('/users/sign-in');
             });
         } else {
+            request.flash('warning', 'User already exist');
             return response.redirect('back');
         }
     })
@@ -77,7 +82,6 @@ module.exports.destroySession = function (request, response, next) {
         if (err) { return next(err); }
 
         request.flash('success', 'You have been logged out!!');
-
         response.redirect('/');
     });
 }

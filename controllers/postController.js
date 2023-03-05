@@ -7,8 +7,9 @@ module.exports.create = function (request, response) {
         user: request.user._id
     },
         function (err, post) {
-            if (err) { console.log('error in creating a post'); return; }
+            if (err) { request.flash('error', err); console.log('error in creating a post'); return; }
 
+            request.flash('success', "Post Created");
             return response.redirect('back');
         });
 }
@@ -25,11 +26,15 @@ module.exports.destroy = async function (request, response) {
 
             await Comment.deleteMany({ post: request.params.id });
 
+            //add message
+            request.flash('success', 'Post and Comments removed');
+
             return response.redirect('back');
         } else {
             return response.redirect('back');
         }
     } catch (err) {
-        console.log("error on deleting comments", err);
+        request.flash('error', 'You cannot delete the post!');
+        return response.redirect('back');
     }
 }

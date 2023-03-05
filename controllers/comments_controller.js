@@ -16,9 +16,11 @@ module.exports.create = async function (request, response) {
             post.comments.push(comment); //update and save to memory
             post.save();    //saves to local
 
+            request.flash('success', "Post Created");
             response.redirect('/');
         }
     } catch (err) {
+        request.flash('error', err);
         console.log('Error', err);
     }
 
@@ -36,9 +38,12 @@ module.exports.destroy = async function (request, response) {
             comment.remove();
 
             await Post.findByIdAndUpdate(postId, { $pull: { comments: request.params.id } });
+
+            request.flash('success', "Comment Deleted");
             return response.redirect('back');
 
         } else {
+            request.flash('error', "Cannot delete comment!");
             return response.redirect('back');
         }
     } catch (err) {

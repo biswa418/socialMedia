@@ -54,6 +54,16 @@
                         }).show();
                     <% } %>
 
+                    <% if (flash.warning && flash.warning.length > 0) { %>
+                        new Noty({
+                            theme: 'relax',
+                            text: "<%=flash.warning%>",
+                            type: 'warning',
+                            layout: 'topRight',
+                            timeout: 1500
+                        }).show();
+                    <% } %>
+
                 </script>
 
 </body>
