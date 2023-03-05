@@ -66,13 +66,18 @@ module.exports.create = function (request, response) {
 
 //sign in and create a session
 module.exports.createSession = function (request, response) {
+    request.flash('success', 'Logged in successfully');
     return response.redirect('/');
 }
 
 //sign out
 module.exports.destroySession = function (request, response, next) {
+
     request.logout(function (err) {
         if (err) { return next(err); }
+
+        request.flash('success', 'You have been logged out!!');
+
         response.redirect('/');
     });
 }

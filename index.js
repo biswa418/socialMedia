@@ -16,6 +16,8 @@ const MongoStore = require('connect-mongo');
 const sass = require('sass');
 const fs = require('fs');
 const path = require('path');
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
 
 const srcDir = './assets/scss';
 const destDir = './assets/css';
@@ -102,6 +104,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
+
+//connect-flash use
+app.use(flash());
+app.use(customMware.setFlash);
 
 //use express router to routes/
 app.use('/', require('./routes'));
