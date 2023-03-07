@@ -10,6 +10,7 @@ module.exports.home = async function (request, response) {
             .populate('user')
             .populate({    // have to populate comment as well as who commented
                 path: 'comments',
+                options: { sort: { createdAt: -1 } },
                 populate: {
                     path: 'user'
                 }

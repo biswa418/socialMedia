@@ -27,12 +27,6 @@
 
                     document.querySelector('#new-post-form>textarea').value = '';
 
-                    let postContainerLi = document.querySelectorAll('#list-posts-container>ul>li');
-
-                    postContainerLi.forEach(element => {
-                        deletePost($(' .delete-post-button', element));
-                    });
-
                     deletePost($(' .delete-post-button', domPost));
                 },
                 error: function (err) {
@@ -59,7 +53,6 @@
 
     //method to create post inside DOM
     let newPostDom = function (post) {
-        console.log(post);
         return `<li id="post-${post._id}">
                     <p>
                             <small>
@@ -116,6 +109,12 @@
             }).show();
         });
     }
+
+    let postContainerLi = document.querySelectorAll('#list-posts-container>ul>li');
+
+    postContainerLi.forEach(element => {
+        deletePost($(' .delete-post-button', element));
+    });
 
     createPost();
 }
