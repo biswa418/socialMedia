@@ -2,14 +2,27 @@ const Post = require('../models/post');
 const Comment = require('../models/comment');
 
 module.exports.create = function (request, response) {
-    Post.create({
+    let post = Post.create({
         content: request.body.content,
         user: request.user._id
     },
-        function (err, post) {
+        async function (err, post) {
             if (err) { request.flash('error', err); console.log('error in creating a post'); return; }
 
-            request.flash('success', "Post Created");
+            // request.flash('success', "Post Created");
+
+
+            if (request.xhr) {
+                let hidPassPost = await Post.findById(post._id).populate('user', '-password');
+
+                return response.status(200).json({
+                    data: {
+                        post: hidPassPost,
+                    },
+                    message: 'Post Created!!'
+                })
+            }
+
             return response.redirect('back');
         });
 }
@@ -26,8 +39,14 @@ module.exports.destroy = async function (request, response) {
 
             await Comment.deleteMany({ post: request.params.id });
 
-            //add message
-            request.flash('success', 'Post and Comments removed');
+            if (request.xhr) {
+                return response.status(200).json({
+                    data: {
+                        post_id: request.params.id,
+                    },
+                    message: 'Post deleted!!'
+                })
+            }
 
             return response.redirect('back');
         } else {

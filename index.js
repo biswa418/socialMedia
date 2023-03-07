@@ -86,7 +86,8 @@ app.use(session({
     saveUninitialized: false,
     resave: false,
     cookie: {
-        maxAge: (1000 * 100 * 60) //expiry of cookie in ms
+        maxAge: (1000 * 100 * 60), //expiry of cookie in ms
+        SameSite: 'None', //browser warns to deprecate it as a third party cookie
     },
     store: MongoStore.create({
         mongoUrl: 'mongodb://127.0.0.1:27017/codial_development',
