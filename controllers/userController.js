@@ -28,16 +28,6 @@ module.exports.update = async function (request, response) {
                 user.name = request.body.name;
                 user.email = request.body.email;
 
-                function fileExists(path) {
-                    try {
-                        fs.accessSync(path, fs.constants.F_OK);
-                        return true;
-                    } catch (err) {
-                        return false;
-                    }
-                }
-
-
                 if (request.file) {
                     //check if avatar already exists and file not deleted then proceed
                     if (user.avatar && fs.existsSync(path.join(__dirname, '..', user.avatar))) {
