@@ -40,21 +40,18 @@ module.exports.update = async function (request, response) {
 
                 if (request.file) {
                     //check if avatar already exists and file not deleted then proceed
+                    if (user.avatar && fs.existsSync(path.join(__dirname, '..', user.avatar))) {
+                        // for troubleshooting
+                        // fs.readdir(path.join(path.join(__dirname, '..'), User.avatarPath), (err, files) => {
+                        //     if (err) {
+                        //         console.error(err);
+                        //         return;
+                        //     }
+                        //     console.log(files);
+                        // });
 
-                    if (user.avatar) {
-                        try {
-                            // fs.readdir(path.join(path.join(__dirname, '..'), User.avatarPath), (err, files) => {
-                            //     if (err) {
-                            //         console.error(err);
-                            //         return;
-                            //     }
-                            //     console.log(files);
-                            // });
-
-                            fs.unlinkSync(path.join(__dirname, '..', user.avatar)); //sync use necessary as we're changing the var name
-                        } catch (err) {
-                            console.log('could not delete file');
-                        }
+                        //sync use necessary as we're changing the var name -- get the thread and then move
+                        fs.unlinkSync(path.join(__dirname, '..', user.avatar));
                     }
                     //saving the path of the uploaded file in the user
                     user.avatar = User.avatarPath + '/' + request.file.filename;
