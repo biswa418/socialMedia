@@ -2,13 +2,17 @@
 
 <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
 
+<div id="preview-window">
+
+</div>
+
 <% if(user.id==profile_user.id){ %>
 
     <form id="updateProfile" action="/users/profile/<%= profile_user.id %>" enctype="multipart/form-data" method="post">
         <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
         <input type="text" name="email" placeholder="Your Name" value="<%= profile_user.email %>" required>
 
-        <input type="file" name="avatar" placeholder="Profile Picture">
+        <input id="avatarPic" type="file" name="avatar" placeholder="Profile Picture">
         <button type="submit" class="button">Update</button>
     </form>
 
@@ -21,3 +25,17 @@
         </p>
 
         <% } %>
+
+
+            <script>
+                let inputAvatar = document.getElementById('avatarPic');
+                let previeWindow = document.getElementById('preview-window');
+
+                inputAvatar.onchange = function (e) {
+                    let objectURL = window.URL.createObjectURL(e.target.files[0]);
+                    previeWindow.innerHTML = `<h2> Preview <h2>
+                    <img src="${objectURL}" alt="<%= user.name %>" width="100">
+                    `;
+                    URL.revokeObjectURL(objectURL);
+                };
+            </script>
