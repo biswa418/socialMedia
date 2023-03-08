@@ -65,6 +65,8 @@ app.use(cookieParser());
 
 //include static files
 app.use(express.static('./assets'));
+//making sure the avatars folders are available for the browsers
+app.use('/uploads', express.static(__dirname + '/uploads'));
 
 
 //use the layouts
