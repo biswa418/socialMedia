@@ -32,16 +32,22 @@ module.exports.destroy = async function (request, response) {
                 }
             });
 
-        post.remove();
+        if (post.user._id == request.user.id) {
+            post.remove();
 
-        await Comment.deleteMany({ post: request.params.id });
+            await Comment.deleteMany({ post: request.params.id });
 
-        return response.status(200).json({
-            data: {
-                post: post,
-            },
-            message: 'Post and associated comments deleted!!'
-        })
+            return response.status(200).json({
+                data: {
+                    post: post,
+                },
+                message: 'Post and associated comments deleted!!'
+            });
+        } else {
+            return response.status(401).json({
+                message: "You cannot delete this post"
+            })
+        }
 
     } catch (err) {
         return response.status(500).json({
