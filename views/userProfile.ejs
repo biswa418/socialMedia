@@ -1,12 +1,9 @@
 <link rel="stylesheet" href="/css/homeProfile.css">
 
-<img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
-
-<div id="preview-window">
-
-</div>
-
 <% if(user.id==profile_user.id){ %>
+    <!-- show avatar only if it's your profile -->
+    <img src="<%= user.avatar %>" alt="<%= user.name %>" width="100">
+    <div id="preview-window"></div>
 
     <form id="updateProfile" action="/users/profile/<%= profile_user.id %>" enctype="multipart/form-data" method="post">
         <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
