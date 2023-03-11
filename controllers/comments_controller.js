@@ -1,5 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const commentMailer = require('../mailer/comments_mailer');
 
 module.exports.create = async function (request, response) {
 
@@ -16,8 +17,10 @@ module.exports.create = async function (request, response) {
             post.comments.push(comment); //update and save to memory
             post.save();    //saves to local
 
+            let hidPassComment = await Comment.findById(comment._id).populate('user', 'name email').populate('post');
+            commentMailer.newComment(hidPassComment); //send email
+
             if (request.xhr) {
-                let hidPassComment = await Comment.findById(comment._id).populate('user', '-password').populate('post');
 
                 return response.status(200).json({
                     data: {
