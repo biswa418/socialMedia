@@ -1,22 +1,39 @@
-<form action="/users/create" method="post">
-    <label for="email">Email</label>
-    <input type="email" placeholder="Email" name="email" required>
+<link rel="stylesheet" href="/css/signin.css">
 
-    <label for="name">Name</label>
-    <input type="text" placeholder="Name" name="name" required>
+<div id="logo-res">
+    <a href="/">
+        <i class="fa-solid fa-ice-cream"></i>
+        <h1>Codeial</h1>
+    </a>
+</div>
 
-    <label for="pasword">Password</label>
-    <input type="password" placeholder="Password" name="password" required>
+<div id="container">
+    <h2>
+        New Coder?
+        Sign Up!
+    </h2>
+    <div id="form-container">
+        <form action="/users/create" method="post">
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Name" name="name" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <input type="password" placeholder="Confirm Password" name="confirm_pasword" required>
 
-    <label for="pasword">Confirm Password</label>
-    <input type="password" placeholder="Confirm Password" name="confirm_pasword" required>
+            <button type="submit">Sign up</button>
+        </form>
+    </div>
 
-    <button type="submit">Sign up</button>
-</form>
+    <div>
+        <p>
+            <button onclick="location.href='/users/auth/google';">
+                <i class="fa-brands fa-google"></i>
+                <a href="/users/auth/google"> Sign up with Google </a>
+            </button>
+        </p>
 
-<p>
-    <button>
-        <i class="fa-brands fa-google"></i>
-        <a href="/users/auth/google"> Google SignIn / SignUp </a>
-    </button>
-</p>
+        <p>
+            Already have an account? &nbsp; <a href="/users/sign-in"> Sign in </a>
+        </p>
+    </div>
+
+</div>
