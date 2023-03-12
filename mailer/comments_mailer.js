@@ -16,7 +16,7 @@ exports.newComment = (comment) => {
                 return;
             }
 
-            console.log('Mail has been sent', info);
+            // console.log('Mail has been sent', info);
         }
     );
 }
