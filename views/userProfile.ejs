@@ -33,6 +33,10 @@
                     previeWindow.innerHTML = `<h2> Preview <h2>
                     <img src="${objectURL}" alt="<%= user.name %>" width="100">
                     `;
-                    URL.revokeObjectURL(objectURL);
+
+                    setTimeout(() => {
+                        URL.revokeObjectURL(objectURL);
+                    },
+                        100);
                 };
             </script>

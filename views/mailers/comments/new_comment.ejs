@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>New Comment on Your Site</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; background-color: #f2f2f2;">
+    <table width="100%" cellpadding="0" cellspacing="0">
+        <tr>
+            <td style="padding: 20px; background-color: #f7882f; color: #ffffff;">
+                <h1 style="margin: 0;">New Comment on Your Site</h1>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 20px; background-color: #ffffff; color: #666666;">
+                <p>Hello,</p>
+                <blockquote style="border-left: 4px solid #f7882f; padding: 0 0 0 15px;">
+                    <p>"<strong>
+                            <%= comment.content %>
+                        </strong>"
+                    </p>
+                    <cite>- <%= comment.user.name %></cite>
+                </blockquote>
+                <br>
+                <p>You can view the comment on your website by following this link: <a
+                        href="http://localhost:8000">Codeial</a>.
+                </p>
+                <p style="margin-top: 30px; font-size: 14px; color: #999999;">Thanks,<br>
+                    Codeial</p>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
