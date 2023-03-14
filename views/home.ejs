@@ -46,3 +46,11 @@
 
 <script src="./js/home_posts.js"></script>
 <script src="./js/post_comments.js"></script>
+<script src="./js/toggle_likes.js"></script>
+<script>
+    const toggleButtons = document.querySelectorAll('.toggle-like-button');
+    toggleButtons.forEach(function (button) {
+        const self = button;
+        let toggleLike = new ToggleLike(self);
+    });
+</script>

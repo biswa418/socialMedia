@@ -1,5 +1,6 @@
 const Comment = require('../models/comment');
 const Post = require('../models/post');
+const Like = require('../models/like');
 const commentMailer = require('../mailer/comments_mailer');
 const queue = require('../config/kue');
 const commentEmailWorker = require('../workers/comment_email_worker');
@@ -33,7 +34,6 @@ module.exports.create = async function (request, response) {
             });
 
             if (request.xhr) {
-
                 return response.status(200).json({
                     data: {
                         comment: hidPassComment
@@ -64,6 +64,7 @@ module.exports.destroy = async function (request, response) {
             comment.remove();
 
             await Post.findByIdAndUpdate(postId, { $pull: { comments: request.params.id } });
+            await Like.deleteMany({ likable: comment._id, onModel: 'Comment' });
 
             if (request.xhr) {
                 return response.status(200).json({

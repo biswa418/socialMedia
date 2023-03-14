@@ -17,6 +17,8 @@
                     let postContainer = document.querySelector('#list-posts-container>ul');
                     postContainer.innerHTML = domPost + postContainer.innerHTML;
 
+                    new ToggleLike($(' .toggle-like-button', domPost));
+
                     new Noty({
                         theme: 'relax',
                         text: "Post Created",
@@ -64,6 +66,13 @@
 
                             <small>
                                 ${post.user.name}
+                            </small>
+
+                            <br>
+                            <small>
+                                <a class="toogle-like-button" data-likes="0" href="/likes/togglt/id=${post._id}&type=Post">
+                                    0 Likes
+                                </a>
                             </small>
                     </p>
                 

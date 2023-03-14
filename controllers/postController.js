@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const Like = require('../models/like');
 const Comment = require('../models/comment');
 
 module.exports.create = function (request, response) {
@@ -10,7 +11,6 @@ module.exports.create = function (request, response) {
             if (err) { request.flash('error', err); console.log('error in creating a post'); return; }
 
             // request.flash('success', "Post Created");
-
 
             if (request.xhr) {
                 let hidPassPost = await Post.findById(post._id).populate('user', '-password');
@@ -35,6 +35,9 @@ module.exports.destroy = async function (request, response) {
 
         //if user id matches
         if (post.user == request.user.id) {
+            await Like.deleteMany({ likeable: post._id, onModel: 'Post' });
+            await Like.deleteMany({ _id: { $in: post.comments } });
+
             post.remove();
 
             await Comment.deleteMany({ post: request.params.id });

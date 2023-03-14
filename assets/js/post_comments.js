@@ -2,20 +2,27 @@
     // method to submit the form data for new Comment using AJAX
     let createComment = function () {
 
-        let newCommentForm = $('#new-comment-form');
+        let newCommentForm = $('.new-comment-form');
 
         newCommentForm.submit(function (e) {
             e.preventDefault();
+            formSubmitted(this.id);
+        });
+
+        let formSubmitted = function (formId) {
+            let newForm = $(`#${formId}`);
 
             $.ajax({
                 type: 'post',
                 url: '/comments/create',
-                data: newCommentForm.serialize(),
+                data: newForm.serialize(),
                 success: function (data) {
                     //console.log(data.data.comment); //currently only showing data
                     let domComment = newCommentDom(data.data.comment);
                     let CommentContainer = document.querySelector(`#post-comments-${data.data.comment.post._id}`);
                     CommentContainer.innerHTML = domComment + CommentContainer.innerHTML;
+
+                    new ToggleLike($(' .toggle-like-button', domComment));
 
                     new Noty({
                         theme: 'relax',
@@ -39,7 +46,7 @@
                     console.log(err.responseText);
                 }
             });
-        });
+        };
     }
 
     //method to create post inside DOM
@@ -54,6 +61,11 @@
                             <small>
                                 ${comment.user.name}
                             </small>
+                            <small>
+                            <a class="toogle-like-button" data-likes="0" href="/likes/togglt/id=${comment._id}&type=Comment">
+                                0 Likes
+                            </a>
+                        </small>
             </p>
         </li>`
     }
