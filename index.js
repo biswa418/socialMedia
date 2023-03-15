@@ -21,6 +21,13 @@ const path = require('path');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
 
+//set up serverSide chatEngine
+const chatServer = require('http').createServer(app);
+const chatSocket = require('./config/chat_sockets').chatSockets(chatServer);
+chatServer.listen(5000);
+console.log('chat engine is up on 5000');
+
+
 const srcDir = './assets/scss';
 const destDir = './assets/css';
 

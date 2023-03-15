@@ -38,7 +38,7 @@ class ToggleLike {
                 .then(response => response.json())
                 .then((data) => {
                     let likesCount = parseInt($(self).attr('data-likes'));
-                    console.log(likesCount);
+                    // console.log(likesCount);
 
                     if (data.data.deleted) {
                         likesCount -= 1;
