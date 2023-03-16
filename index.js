@@ -9,6 +9,7 @@ const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const session = require('express-session'); //session cookie
 const passport = require('passport');       //auth
+const env = require('./config/environment');
 const passportLocal = require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
 const googleAuth = require('./config/passport-google-oauth2-strategy');
@@ -27,9 +28,8 @@ const chatSocket = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat engine is up on 5000');
 
-
-const srcDir = './assets/scss';
-const destDir = './assets/css';
+const srcDir = path.join(__dirname, env.asset_path, 'scss');
+const destDir = path.join(__dirname, env.asset_path, 'css');
 
 fs.readdir(srcDir, (err, files) => {
     if (err) {
@@ -73,7 +73,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //include static files
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
 //making sure the avatars folders are available for the browsers
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
@@ -93,7 +93,7 @@ app.set('views', './views');
 app.use(session({
     name: 'codeial', //name of the cookie
     //change secret in prod
-    secret: 'something', //key to encode and decode
+    secret: env.session_cookie_key, //key to encode and decode
     saveUninitialized: false,
     resave: false,
     cookie: {
