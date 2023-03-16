@@ -33,6 +33,8 @@ class ChatEngine {
                 ${userName} joined
             </div>`;
 
+            document.getElementById('chat-messages-list').scrollTop = document.getElementById('chat-messages-list').getBoundingClientRect().height + 100;
+
         });
 
         let chatSend = document.getElementById('send-message');
@@ -89,6 +91,7 @@ class ChatEngine {
             </li>`;
 
             ulElement.innerHTML += newElement;
+            document.getElementById('chat-messages-list').scrollTop = document.getElementById('chat-messages-list').scrollHeight;
             document.getElementById('chat-message-input').value = '';
         });
 
