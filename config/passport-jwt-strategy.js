@@ -7,7 +7,7 @@ const User = require('../models/users');
 
 let opts = {
     jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-    secretOrKey: env.jwt_key
+    secretOrKey: env.jwt_secret
 }
 
 passport.use(new JWTstrategy(opts, function (jwtPayload, done) {

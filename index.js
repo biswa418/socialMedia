@@ -10,6 +10,7 @@ const db = require('./config/mongoose');
 const session = require('express-session'); //session cookie
 const passport = require('passport');       //auth
 const env = require('./config/environment');
+const logger = require('morgan'); //logger - prod
 const passportLocal = require('./config/passport-local-strategy');
 const passportJWT = require('./config/passport-jwt-strategy');
 const googleAuth = require('./config/passport-google-oauth2-strategy');
@@ -28,43 +29,45 @@ const chatSocket = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000);
 console.log('chat engine is up on 5000');
 
-const srcDir = path.join(__dirname, env.asset_path, 'scss');
-const destDir = path.join(__dirname, env.asset_path, 'css');
+if (env.name == 'development') {
+    const srcDir = path.join(__dirname, env.asset_path, 'scss');
+    const destDir = path.join(__dirname, env.asset_path, 'css');
 
-fs.readdir(srcDir, (err, files) => {
-    if (err) {
-        console.error(err);
-        return;
-    }
-
-    files.forEach(file => {
-        if (!file.endsWith('.scss')) {
+    fs.readdir(srcDir, (err, files) => {
+        if (err) {
+            console.error(err);
             return;
         }
 
-        const filePath = path.join(srcDir, file);
-        const outputFile = file.replace(/\.scss$/, '.css');
-        const outputFilePath = path.join(destDir, outputFile);
-
-        sass.render({
-            file: filePath,
-            outputStyle: 'compressed'
-        }, (err, result) => {
-            if (err) {
-                console.error(err);
+        files.forEach(file => {
+            if (!file.endsWith('.scss')) {
                 return;
             }
 
-            fs.writeFile(outputFilePath, result.css.toString(), err => {
+            const filePath = path.join(srcDir, file);
+            const outputFile = file.replace(/\.scss$/, '.css');
+            const outputFilePath = path.join(destDir, outputFile);
+
+            sass.render({
+                file: filePath,
+                outputStyle: 'compressed'
+            }, (err, result) => {
                 if (err) {
                     console.error(err);
-                } else {
+                    return;
                 }
+
+                fs.writeFile(outputFilePath, result.css.toString(), err => {
+                    if (err) {
+                        console.error(err);
+                    } else {
+                    }
+                });
             });
         });
+        console.log(`SCSS compiled to CSS`);
     });
-    console.log(`SCSS compiled to CSS`);
-});
+}
 
 //use post req parser
 app.use(express.urlencoded({ extended: true }));
@@ -77,6 +80,8 @@ app.use(express.static(env.asset_path));
 //making sure the avatars folders are available for the browsers
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
+//logs
+app.use(logger(env.morgan.mode, env.morgan.options));
 
 //use the layouts
 app.use(expressLayouts);

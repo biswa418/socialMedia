@@ -4,7 +4,7 @@ exports.newReset = (accessToken) => {
     let htmlString = nodeMailer.renderTemplate({ accessToken: accessToken }, '/resetPassword/resetPass.ejs');
 
     nodeMailer.transporter.sendMail({
-        from: 'example@gmail.com', //sender email
+        from: 'sutar.app@gmail.com', //sender email
         to: accessToken.user.email,
         subject: "Reset your password",
         html: htmlString

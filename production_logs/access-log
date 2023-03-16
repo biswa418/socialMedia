@@ -1,0 +1,3 @@
+::ffff:127.0.0.1 - - [16/Mar/2023:20:18:43 +0000] "GET / HTTP/1.1" 200 8958 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0"
+::ffff:127.0.0.1 - - [16/Mar/2023:20:19:18 +0000] "POST /posts/create HTTP/1.1" 200 412 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0"
+::ffff:127.0.0.1 - - [16/Mar/2023:21:15:33 +0000] "GET / HTTP/1.1" 200 10472 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0"
