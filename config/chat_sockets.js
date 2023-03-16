@@ -21,7 +21,6 @@ module.exports.chatSockets = function (socketServer) {
         });
 
         socket.on('send_message', function (data) {
-            // console.log('data received in back end', data);
             let date = new Date();
             data.sentTime = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`;
             io.in(data.chatroom).emit('msg_rcvd', data);

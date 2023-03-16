@@ -18,31 +18,74 @@
         list-style: none;
         padding: 10px;
         height: 76%;
-        // background-color: #314758;
         border-radius: inherit;
         overflow: auto;
+
+        .joining_message {
+            margin-left: 25%;
+            color: white;
+            background-color: #7c7e7f;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            width: fit-content;
+            padding: 5px;
+            opacity: 0.4;
+            margin-bottom: 10px;
+        }
 
         .other-message {
             text-align: left;
             padding: 5px;
+            margin-bottom: -5%;
 
-            span {
-                display: inline-block;
-                padding: 15px;
-                background-color: #ffa0a0;
+            div {
+                display: flex;
+                flex-direction: column;
+
+                sub {
+                    font-size: 0.72rem;
+                    color: #797979;
+                    margin: 2px;
+                }
+
+                span {
+                    width: fit-content;
+                    max-width: 60%;
+                    display: inline-block;
+                    padding: 15px;
+                    background-color: #7c7e7f;
+                    border-radius: 1.1rem;
+                }
             }
+
 
         }
 
         .self-message {
-            text-align: right;
+            text-align: left;
             padding: 5px;
+            margin-bottom: -5%;
 
-            span {
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: flex-end;
 
-                display: inline-block;
-                padding: 15px;
-                background-color: #a0dcff;
+                sub {
+                    font-size: 0.72rem;
+                    color: #797979;
+                    margin: 2px;
+                }
+
+                span {
+                    width: fit-content;
+                    max-width: 60%;
+                    display: inline-block;
+                    padding: 15px;
+                    background-color: #a0dcff;
+                    border-radius: 1.1rem;
+                }
             }
 
         }

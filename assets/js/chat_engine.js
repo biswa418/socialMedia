@@ -24,12 +24,21 @@ class ChatEngine {
         });
 
         self.socket.on('user_joined', function (data) {
-            console.log('A user joined', data);
+            // console.log('A user joined', data);
+            let chatBox = document.getElementById('chat-messages-list');
+            let userName = String(data.user_email).substring(0, String(data.user_email).search('@'));
+
+            chatBox.innerHTML += `
+            <div class="joining_message">
+                ${userName} joined
+            </div>`;
+
         });
 
         let chatSend = document.getElementById('send-message');
 
-        chatSend.addEventListener('click', function (e) {
+
+        let event = function (e) {
             e.preventDefault();
 
             let msg = $('#chat-message-input').val();
@@ -42,6 +51,16 @@ class ChatEngine {
                     chatroom: 'Codeial'
                 });
             }
+        };
+
+        chatSend.addEventListener('click', function (e) {
+            event(e);
+        });
+
+        document.getElementById('chat-message-input').addEventListener('keydown', function (e) {
+            if (e.key == 'Enter') {
+                event(e);
+            }
         });
 
         this.socket.on('msg_rcvd', function (data) {
@@ -53,16 +72,19 @@ class ChatEngine {
             }
 
             let ulElement = document.getElementById('chat-messages-list');
+            let userName = String(data.user_email).substring(0, String(data.user_email).search('@'));
             let newElement = `<li class="${messageType}">
-                <sub>
-                    ${data.user_email}
-                </sub>
-                <span>
-                    ${data.message}
-                </span>
-                <sub>
-                    ${data.sentTime}
-                <sub>
+                <div class="info-container">
+                    <sub>
+                        ${userName}
+                    </sub>
+                    <span>
+                        ${data.message}
+                    </span>
+                    <sub>
+                        ${data.sentTime}
+                    <sub>
+                <div>
 
             </li>`;
 
