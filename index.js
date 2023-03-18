@@ -5,6 +5,9 @@ const port = 8000;
 //get layouts library
 const expressLayouts = require('express-ejs-layouts');
 
+//helper to read files from manifest
+require('./config/view_helpers')(app);
+
 //mongo
 const db = require('./config/mongoose');
 const session = require('express-session'); //session cookie
@@ -26,8 +29,8 @@ const customMware = require('./config/middleware');
 //set up serverSide chatEngine
 const chatServer = require('http').createServer(app);
 const chatSocket = require('./config/chat_sockets').chatSockets(chatServer);
-chatServer.listen(5000);
-console.log('chat engine is up on 5000');
+chatServer.listen(6000);
+console.log('chat engine is up on 6000');
 
 if (env.name == 'development') {
     const srcDir = path.join(__dirname, env.asset_path, 'scss');

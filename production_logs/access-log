@@ -1,3 +1,102 @@
 ::ffff:127.0.0.1 - - [16/Mar/2023:20:18:43 +0000] "GET / HTTP/1.1" 200 8958 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0"
 ::ffff:127.0.0.1 - - [16/Mar/2023:20:19:18 +0000] "POST /posts/create HTTP/1.1" 200 412 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0"
 ::ffff:127.0.0.1 - - [16/Mar/2023:21:15:33 +0000] "GET / HTTP/1.1" 200 10472 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:03:36 +0000] "GET / HTTP/1.1" 500 1853 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:03:53 +0000] "GET / HTTP/1.1" 500 2308 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:04:14 +0000] "GET / HTTP/1.1" 500 2303 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:05:01 +0000] "GET / HTTP/1.1" 200 6342 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:05:01 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:05:43 +0000] "GET / HTTP/1.1" 500 1852 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:05:54 +0000] "GET / HTTP/1.1" 500 1852 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:24 +0000] "GET / HTTP/1.1" 200 6364 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:24 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:24 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:24 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:48 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:49 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:49 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:49 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:53 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:53 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:53 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:53 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:53 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:06:53 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:07:37 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:07:37 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:07:37 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:07:37 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:09:56 +0000] "GET / HTTP/1.1" 200 6360 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:10:19 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+[0mGET / [32m200[0m 113.781 ms - 7820[0m
+[0mGET / [32m200[0m 46.846 ms - 7819[0m
+[0mGET / [32m200[0m 35.096 ms - 7820[0m
+[0mGET / [36m304[0m 34.266 ms - -[0m
+[0mGET / [36m304[0m 32.075 ms - -[0m
+[0mGET / [36m304[0m 82.320 ms - -[0m
+[0mGET / [36m304[0m 43.135 ms - -[0m
+[0mGET / [32m200[0m 34.044 ms - 7837[0m
+[0mGET / [32m200[0m 31.263 ms - 7855[0m
+::ffff:127.0.0.1 - - [18/Mar/2023:00:14:07 +0000] "GET / HTTP/1.1" 200 6395 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:14:07 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:14:07 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:14:07 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:15:01 +0000] "GET / HTTP/1.1" 304 - "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:15:01 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:15:01 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:15:01 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+[0mGET / [32m200[0m 76.435 ms - 7852[0m
+[0mGET /users/sign-in [32m200[0m 13.299 ms - 3421[0m
+[0mGET /users/css/header.css [33m404[0m 15.084 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 21.541 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 20.664 ms - 159[0m
+[0mGET /users/sign-in [36m304[0m 10.634 ms - -[0m
+[0mGET /users/css/header.css [33m404[0m 13.837 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 8.905 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 10.168 ms - 159[0m
+[0mGET /users/sign-in [36m304[0m 33.615 ms - -[0m
+[0mGET /users/css/header.css [33m404[0m 14.243 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 15.651 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 28.481 ms - 159[0m
+[0mGET /users/sign-in [32m200[0m 12.773 ms - 3450[0m
+[0mGET /users/css/footer.css [33m404[0m 10.297 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 8.800 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 10.444 ms - 159[0m
+[0mGET /users/sign-in [32m200[0m 11.256 ms - 3464[0m
+[0mGET /users/css/footer.css [33m404[0m 10.525 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 12.357 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 10.468 ms - 159[0m
+[0mGET /users/sign-in [32m200[0m 11.961 ms - 3464[0m
+[0mGET /users/css/header.css [33m404[0m 13.414 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 5.492 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 10.406 ms - 159[0m
+[0mGET /users/sign-in [32m200[0m 10.476 ms - 3464[0m
+[0mGET /users/css/footer.css [33m404[0m 9.257 ms - 159[0m
+[0mGET /users/css/header.css [33m404[0m 9.873 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 6.454 ms - 159[0m
+[0mGET /users/sign-in [32m200[0m 4.490 ms - 3464[0m
+[0mGET /users/css/header.css [33m404[0m 6.216 ms - 159[0m
+[0mGET /users/css/layout.css [33m404[0m 8.315 ms - 159[0m
+[0mGET /users/css/footer.css [33m404[0m 8.166 ms - 159[0m
+[0mGET /users/sign-in [32m200[0m 61.444 ms - 3468[0m
+[0mGET /users/sign-in [36m304[0m 15.265 ms - -[0m
+[0mGET /users/sign-in [32m200[0m 7.269 ms - 3424[0m
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:09 +0000] "GET /users/sign-in HTTP/1.1" 200 3457 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:10 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:10 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:10 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:31 +0000] "GET /users/sign-in HTTP/1.1" 200 3512 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:31 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:32 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:00:59:32 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+[0mGET /users/sign-in [32m200[0m 18.566 ms - 3468[0m
+::ffff:127.0.0.1 - - [18/Mar/2023:01:00:44 +0000] "GET /users/sign-in HTTP/1.1" 200 3512 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:00:44 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:00:44 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:00:44 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:01:14 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:01:14 +0000] "GET /css/header-3ba6f125ca.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:01:14 +0000] "GET /css/footer-5c78de85df.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:01:14 +0000] "GET /css/layout-34dc605cff.css HTTP/1.1" 404 164 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:04:59 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:01:04:59 +0000] "GET /css/signin.css HTTP/1.1" 404 153 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
