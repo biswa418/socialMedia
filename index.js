@@ -29,8 +29,8 @@ const customMware = require('./config/middleware');
 //set up serverSide chatEngine
 const chatServer = require('http').createServer(app);
 const chatSocket = require('./config/chat_sockets').chatSockets(chatServer);
-chatServer.listen(6000);
-console.log('chat engine is up on 6000');
+chatServer.listen(5000);
+console.log('chat engine is up on 5000');
 
 if (env.name == 'development') {
     const srcDir = path.join(__dirname, env.asset_path, 'scss');
