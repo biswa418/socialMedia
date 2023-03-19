@@ -46,7 +46,7 @@ gulp.task('images', async function (done) {
     let { default: rev } = await import('gulp-rev');
     let { default: imagemin } = await import('gulp-imagemin');
 
-    gulp.src('./assets/**/*.+(png|jpg|gif|svg|jpeg)')
+    gulp.src('./assets/**/*.+(png|jpg|gif|svg|jpeg|ico)')
         .pipe(imagemin())
         .pipe(rev())
         .pipe(gulp.dest('./public/assets'))

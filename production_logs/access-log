@@ -166,3 +166,8 @@
 ::1 - - [18/Mar/2023:01:28:07 +0000] "GET / HTTP/1.1" 200 9976 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 ::1 - - [18/Mar/2023:01:29:37 +0000] "GET / HTTP/1.1" 200 9976 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 ::ffff:127.0.0.1 - - [18/Mar/2023:01:29:45 +0000] "GET / HTTP/1.1" 200 10792 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:03:14:20 +0000] "GET / HTTP/1.1" 200 6542 "http://localhost:8000/users/sign-in" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:03:14:22 +0000] "GET /users/sign-in HTTP/1.1" 200 3549 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:03:14:53 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:03:14:59 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
+::ffff:127.0.0.1 - - [18/Mar/2023:03:16:32 +0000] "GET /users/sign-in HTTP/1.1" 200 3567 "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/111.0"
