@@ -27,10 +27,10 @@ const development = {
             pass: "random-gen-pw", //app password created on google
         },
     },
-    google_clientID: "405256795589-85v9rlltnvigg2o27cuf1vqlrh2e15dm.apps.googleusercontent.com",
-    google_clientSecret: "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",
-    google_callbackURL: "http://localhost:8000/users/auth/google/callback",
-    jwt_secret: 'codeial',
+    google_clientID: "random", // id
+    google_clientSecret: "avaanaknakna", // goggle client secret 
+    google_callbackURL: "http://localhost:8000/users/auth/google/callback", //callback
+    jwt_secret: 'any_secret_string',
     morgan: {
         mode: 'dev',
         options: { stream: accessLogStream }
