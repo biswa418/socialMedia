@@ -19,7 +19,7 @@ module.exports.home = async function (request, response) {
         let users = await User.find({});
 
         return response.render('home', {
-            title: "Codeial | Home",
+            title: "DevConnect | Home",
             posts: posts,
             all_users: users
         });

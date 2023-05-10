@@ -2,7 +2,7 @@ const Comment = require('../models/comment');
 const Post = require('../models/post');
 const Like = require('../models/like');
 const commentMailer = require('../mailer/comments_mailer');
-const queue = require('../config/kue');
+// const queue = require('../config/kue');
 const commentEmailWorker = require('../workers/comment_email_worker');
 
 module.exports.create = async function (request, response) {
@@ -23,15 +23,15 @@ module.exports.create = async function (request, response) {
             let hidPassComment = await Comment.findById(comment._id).populate('user', 'name email').populate('post');
             // commentMailer.newComment(hidPassComment); //send email
 
-            let job = queue.create('emails', hidPassComment).save(function (err) {
-                if (err) {
-                    console.log('Error in sending to the queue ', err);
-                    return;
-                }
+            // let job = queue.create('emails', hidPassComment).save(function (err) {
+            //     if (err) {
+            //         console.log('Error in sending to the queue ', err);
+            //         return;
+            //     }
 
-                console.log('job enqueued', job.id);
+            //     console.log('job enqueued', job.id);
 
-            });
+            // });
 
             if (request.xhr) {
                 return response.status(200).json({

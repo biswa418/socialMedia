@@ -27,9 +27,9 @@ const development = {
             pass: "random-gen-pw", //app password created on google
         },
     },
-    google_clientID: "405256795589-85v9rlltnvigg2o27cuf1vqlrh2e15dm.apps.googleusercontent.com",
-    google_clientSecret: "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",
-    google_callbackURL: "http://localhost:8000/users/auth/google/callback",
+    google_clientID: process.env.google_clientID,
+    google_clientSecret: process.env.google_clientSecret,
+    google_callbackURL: process.env.google_callbackURL,
     jwt_secret: 'codeial',
     morgan: {
         mode: 'dev',
@@ -63,4 +63,4 @@ const production = {
     }
 }
 
-module.exports = eval(process.env.NODE_ENV) == undefined ? development : production;
+module.exports = development;

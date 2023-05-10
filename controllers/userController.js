@@ -75,7 +75,7 @@ module.exports.signup = function (request, response) {
     }
 
     return response.render('user_sign_up', {
-        title: "Codial | Sign up"
+        title: "DevConnect | Sign up"
     });
 }
 
@@ -86,7 +86,7 @@ module.exports.signin = function (request, response) {
     }
 
     return response.render('user_sign_in', {
-        title: "Codial | Sign in"
+        title: "DevConnect | Sign in"
     });
 }
 

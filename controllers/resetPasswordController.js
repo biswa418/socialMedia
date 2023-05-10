@@ -40,7 +40,7 @@ module.exports.confirmPass = async function (request, response) {
     let accessToken = await Reset.findById(request.params.accessToken).populate('user', '-password');
 
     return response.render('reset_confirm', {
-        title: "Codeial | Reset Password",
+        title: "DevConnect | Reset Password",
         accessToken: accessToken,
     });
 }
